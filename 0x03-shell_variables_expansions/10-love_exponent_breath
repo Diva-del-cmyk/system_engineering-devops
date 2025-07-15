@@ -1,2 +1,2 @@
 #!/bin/bash
-for ((i=0,result=1; i<LOVE; i++)); do result=$((result * BREATH)); done; echo "$result"
+echo $((BREATH**LOVE))
