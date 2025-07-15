@@ -1,10 +1,2 @@
 #!/bin/bash
-result=1
-count=0
-
-while [ $count -lt $LOVE ]; do
-  result=$((result * BREATH))
-  count=$((count + 1))
-done
-
-echo "$result"
+for ((i=0,result=1; i<LOVE; i++)); do result=$((result * BREATH)); done; echo "$result"
