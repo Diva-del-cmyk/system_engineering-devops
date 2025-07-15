@@ -1,2 +1,21 @@
 #!/bin/bash
-my_function() { local BEST="School"; }
+PATH="my_folder"
+if [ -e "$PATH" ]; then
+  if [ -d "$PATH" ]; then
+    echo "$PATH is a directory."
+  elif [ -f "$PATH" ]; then
+    echo "$PATH is a file."
+  fi
+else
+  echo "$PATH does not exist."
+fi
+
+for name in Alice Bob Charlie; do
+  echo "Hello, $name!"
+done
+
+COUNT=10
+while [ $COUNT -gt 0 ]; do
+  echo "$COUNT"
+  COUNT=$((COUNT - 1))
+done
