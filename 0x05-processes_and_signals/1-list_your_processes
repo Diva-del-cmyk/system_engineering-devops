@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that lists processes with user, full start time (with seconds), and command
+# A Bash script that lists only running bash processes with their USER and command path
 
-ps -eo user,lstart,cmd | awk 'NR==1 {$2=$2" "$3" "$4" "$5" "$6; print "USER STARTED COMMAND"; next} {printf "%s %s:%s:%s %s\n", $1, $4, $5, $6, substr($0, index($0,$8))}'
+ps -eo user,comm | grep -w bash | sed 's/bash/\/bin\/bash/'
