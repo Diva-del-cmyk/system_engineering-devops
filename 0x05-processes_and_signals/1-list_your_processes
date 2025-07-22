@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that displays currently running processes
+# A Bash script that lists processes with user, full start time (with seconds), and command
 
-ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
+ps -eo user,lstart,cmd | awk 'NR==1 {$2=$2" "$3" "$4" "$5" "$6; print "USER STARTED COMMAND"; next} {printf "%s %s:%s:%s %s\n", $1, $4, $5, $6, substr($0, index($0,$8))}'
