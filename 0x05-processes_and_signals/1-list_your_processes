@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# List all running processes with detailed info and process hierarchy
+# List all running processes with the exact header and hierarchy, no default ps header
 
-echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT STARTED   TIME COMMAND"
-ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,stime,time,command --forest --no-headers
+echo "USER STARTED COMMAND"
+ps -eo user,stime,command --forest --no-headers
