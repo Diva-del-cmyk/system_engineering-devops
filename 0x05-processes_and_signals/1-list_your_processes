@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# List all running processes with the exact header and hierarchy, no default ps header
+# List all users running bash processes
 
-echo "USER STARTED COMMAND"
-ps -eo user,stime,command --forest --no-headers
+echo "USER"
+ps -eo user,comm --no-headers | grep -w bash | awk '{print $1}'
