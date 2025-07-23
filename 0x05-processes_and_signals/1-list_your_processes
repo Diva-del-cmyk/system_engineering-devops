@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that lists only running bash processes with their USER and command path
+# List all running processes with detailed info and process hierarchy
 
-ps -eo user,comm | grep -w bash | sed 's/bash/\/bin\/bash/'
+ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command --forest
